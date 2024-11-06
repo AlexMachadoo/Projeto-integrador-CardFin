@@ -1,0 +1,95 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #2d3748;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #edf2f7;
+}
+
+th, td {
+    padding: 12px 16px;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    font-weight: 600;
+}
+
+td {
+    transition: background-color 0.3s;
+}
+
+.bg-red-500 {
+    background-color: #f56565;
+    border-radius: 5px;
+}
+
+.bg-red-600:hover {
+    background-color: #e53e3e;
+}
+
+.text-yellow-500 {
+    color: #ecc94b;
+}
+
+.text-yellow-600:hover {
+    color: #d69e2e;
+}
+
+.text-red-500 {
+    color: #e53e3e;
+}
+
+.text-red-600:hover {
+    color: #c53030;
+}
+
+.hover\:bg-gray-50:hover {
+    background-color: #f7fafc;
+}
+
+.transition {
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+form {
+    display: inline;
+}
+
+.action-button {
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #f56565 !important;
+}
