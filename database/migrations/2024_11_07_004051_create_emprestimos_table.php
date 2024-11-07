@@ -12,9 +12,11 @@ class CreateEmprestimosTable extends Migration
     public function up()
     {
         Schema::create('emprestimos', function (Blueprint $table) {
-            $table->id();
-            $table->string('usuario');
-            $table->string('item');
+          	
+       
+            $table->decimal('valor', 10, 2);
+            $table->decimal('valor_parcela', 10, 2);
+            $table->integer('numero_parcela');
             $table->date('data_emprestimo');
             $table->date('data_devolucao')->nullable();
             $table->timestamps();

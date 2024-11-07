@@ -4,6 +4,8 @@
     align-items: flex-start;
     flex-direction: column;
     padding: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -33,18 +35,22 @@ th, td {
 
 th {
     font-weight: 600;
+    color: #2d3748;
 }
 
 td {
-    transition: background-color 0.3s;
+    color: #4a5568;
+    transition: background-color 0.3s ease;
 }
 
 .bg-red-500 {
     background-color: #f56565;
     border-radius: 5px;
+    padding: 8px 16px;
+    color: black;
 }
 
-.bg-red-600:hover {
+.bg-red-500:hover {
     background-color: #e53e3e;
 }
 
@@ -52,7 +58,7 @@ td {
     color: #ecc94b;
 }
 
-.text-yellow-600:hover {
+.text-yellow-500:hover {
     color: #d69e2e;
 }
 
@@ -60,7 +66,7 @@ td {
     color: #e53e3e;
 }
 
-.text-red-600:hover {
+.text-red-500:hover {
     color: #c53030;
 }
 
@@ -68,14 +74,11 @@ td {
     background-color: #f7fafc;
 }
 
-.transition {
-    transition: background-color 0.2s, transform 0.2s;
-}
-
 button {
-    padding: 5px 10px;
+    padding: 6px 12px;
     border-radius: 5px;
-    transition: background-color 0.2s, transform 0.2s;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
 }
 
 button:hover {
@@ -87,9 +90,74 @@ form {
 }
 
 .action-button {
-    transition: background-color 0.3s ease;
+    padding: 6px 12px;
+    border-radius: 5px;
+    background-color: #f56565;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
 }
 
 .action-button:hover {
-    background-color: #f56565 !important;
+    background-color: #e53e3e;
+    color: white;
+}
+
+button:focus, .action-button:focus {
+    outline: none;
+}
+
+table tr:hover td {
+    background-color: #f7fafc;
+}
+
+table th {
+    cursor: pointer;
+}
+
+table th:hover {
+    background-color: #edf2f7;
+}
+
+form.inline {
+    display: inline-block;
+}
+
+form.inline button {
+    background-color: transparent;
+    color: #e53e3e;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+form.inline button:hover {
+    color: #c53030;
+}
+
+form.inline button:focus {
+    outline: none;
+}
+
+form.inline input, form.inline select, form.inline textarea {
+    display: inline-block;
+    width: auto;
+    margin-right: 8px;
+    padding: 4px 8px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+}
+
+.form-error {
+    color: #e53e3e;
+    font-size: 0.875rem;
+    margin-top: 5px;
+}
+
+.text-success {
+    color: #38a169;
+}
+
+.text-warning {
+    color: #ecc94b;
 }

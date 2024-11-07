@@ -1,3 +1,259 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('./../css/emprestimos/create.css');
+@import url('./../css/emprestimos/index.blade.css');
+body {
+    font-family: 'Arial', sans-serif;
+}
+body {
+    background-color: #f0f0f0;
+}
+
+#etapa-1, #etapa-2 {
+    display: none;
+}
+
+#etapa-1.active, #etapa-2.active {
+    display: block;
+}
+
+.etapa {
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #3490dc;
+    color: white;
+    border: none;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+}
+
+.btn-success {
+    background-color: #38c172;
+    color: white;
+    border: none;
+}
+
+.text-red-500 {
+    color: #f56565;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.contract-content {
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 16px;
+    border-radius: 4px;
+}
+
+.accept-terms {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 8px 12px;
+    margin-top: 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.accept-terms:hover {
+    background-color: #45a049;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #2d3748;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #edf2f7;
+}
+
+th, td {
+    padding: 12px 16px;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    font-weight: 600;
+    color: #2d3748;
+}
+
+td {
+    color: #4a5568;
+    transition: background-color 0.3s ease;
+}
+
+.bg-red-500 {
+    background-color: #f56565;
+    border-radius: 5px;
+    padding: 8px 16px;
+    color: black;
+}
+
+.bg-red-500:hover {
+    background-color: #e53e3e;
+}
+
+.text-yellow-500 {
+    color: #ecc94b;
+}
+
+.text-yellow-500:hover {
+    color: #d69e2e;
+}
+
+.text-red-500 {
+    color: #e53e3e;
+}
+
+.text-red-500:hover {
+    color: #c53030;
+}
+
+.hover\:bg-gray-50:hover {
+    background-color: #f7fafc;
+}
+
+button {
+    padding: 6px 12px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+form {
+    display: inline;
+}
+
+.action-button {
+    padding: 6px 12px;
+    border-radius: 5px;
+    background-color: #f56565;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.action-button:hover {
+    background-color: #e53e3e;
+    color: white;
+}
+
+button:focus, .action-button:focus {
+    outline: none;
+}
+
+table tr:hover td {
+    background-color: #f7fafc;
+}
+
+table th {
+    cursor: pointer;
+}
+
+table th:hover {
+    background-color: #edf2f7;
+}
+
+form.inline {
+    display: inline-block;
+}
+
+form.inline button {
+    background-color: transparent;
+    color: #e53e3e;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+form.inline button:hover {
+    color: #c53030;
+}
+
+form.inline button:focus {
+    outline: none;
+}
+
+form.inline input, form.inline select, form.inline textarea {
+    display: inline-block;
+    width: auto;
+    margin-right: 8px;
+    padding: 4px 8px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+}
+
+.form-error {
+    color: #e53e3e;
+    font-size: 0.875rem;
+    margin-top: 5px;
+}
+
+.text-success {
+    color: #38a169;
+}
+
+.text-warning {
+    color: #ecc94b;
+}

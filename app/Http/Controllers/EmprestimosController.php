@@ -1,11 +1,9 @@
 <?php
 
-
 namespace App\Http\Controllers;
 
 use App\Models\Emprestimo;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
 
 class EmprestimosController extends Controller
 {
@@ -15,7 +13,6 @@ class EmprestimosController extends Controller
         return view('emprestimos.index', compact('emprestimos'));
     }
 
-    // Adicionando o método para a dashboard
     public function dashboard()
     {
         $emprestimos = Emprestimo::all();

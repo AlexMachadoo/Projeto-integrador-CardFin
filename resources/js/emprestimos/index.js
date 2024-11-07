@@ -28,6 +28,36 @@ document.addEventListener('DOMContentLoaded', function () {
             button.classList.remove('hover:bg-gray-200');
         });
     });
+
+    const searchInput = document.getElementById('search');
+    if (searchInput) {
+        searchInput.addEventListener('input', function () {
+            const searchTerm = searchInput.value.toLowerCase();
+            const rows = table.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                const cells = Array.from(row.getElementsByTagName('td'));
+                const matches = cells.some(cell => cell.innerText.toLowerCase().includes(searchTerm));
+                row.style.display = matches ? '' : 'none';
+            });
+        });
+    }
+
+    const toggleSelectAll = document.getElementById('select-all');
+    if (toggleSelectAll) {
+        toggleSelectAll.addEventListener('change', function () {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]:not(#select-all)');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = toggleSelectAll.checked;
+            });
+        });
+    }
+
+    const rows = table ? table.querySelectorAll('tbody tr') : [];
+    rows.forEach(row => {
+        row.addEventListener('click', function () {
+            row.classList.toggle('bg-gray-100');
+        });
+    });
 });
 
 function sortTable(table, colIndex) {
