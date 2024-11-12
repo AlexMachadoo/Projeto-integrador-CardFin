@@ -1,0 +1,32 @@
+
+.navbar {
+    background-color: #fff; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+
+.navbar .nav-link {
+    color: #4A5568; 
+    font-weight: 600;
+    transition: color 0.3s ease; 
+}
+
+.navbar .nav-link:hover {
+    color: #2D3748; 
+}
+
+
+.navbar .nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+}
+
+
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

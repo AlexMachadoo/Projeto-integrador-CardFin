@@ -1,0 +1,100 @@
+/* Estilo geral da página */
+body {
+    background-color: #f5f5f5;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título centralizado */
+h1 {
+    font-size: 2.5rem;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Estilizando a tabela */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.table thead {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+.table th, .table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Botões personalizados */
+.custom-button {
+    background-color: #28a745;
+    color: white;
+    border-radius: 25px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.custom-button:active {
+    background-color: #1e7e34;
+    transform: translateY(0);
+}
+
+.d-flex {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Ajustando o layout dos botões */
+.d-flex a {
+    padding: 10px 20px;
+}
+
+/* Pequenos ajustes de responsividade */
+@media (max-width: 767px) {
+    .container {
+        padding: 15px;
+    }
+
+    .table {
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}

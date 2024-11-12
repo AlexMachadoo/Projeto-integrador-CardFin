@@ -8,13 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Emprestimo extends Model
 {
     use HasFactory;
-    protected $table = "emprestimos";
+
     protected $fillable = [
-        'item', 
         'valor',
-        'valor_parcela',
-        'numero_parcela',
         'data_emprestimo',
-        'data_devolucao',
+        'parcelas',
+        'tipo_credito',
+        'numero_parcela',
     ];
+
+    public $timestamps = true;
 }

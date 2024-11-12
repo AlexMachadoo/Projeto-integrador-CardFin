@@ -2,48 +2,36 @@
 
 @section('content')
     <div class="container mx-auto px-4 py-6">
-        <h1 class="text-3xl font-bold mb-4">Novo Empréstimo</h1>
+        <h1 class="text-3xl font-bold mb-4">Novo Empréstimo - CardFin</h1>
 
-        <form action="{{ route('emprestimos.store') }}" method="POST" id="emprestimo-form">
-            @csrf
-            <div id="etapa-1" class="etapa active">
-                <div class="mb-4">
-                    <label for="valor" class="block">Valor do Empréstimo</label>
-                    <input type="number" name="valor" id="valor" class="form-control" required>
-                </div>
-                <div class="mb-4">
-                    <label for="parcelas" class="block">Número de Parcelas</label>
-                    <input type="number" name="parcelas" id="parcelas" class="form-control" required>
-                </div>
-                <div class="mb-4">
-                    <label for="tipo_credito" class="block">Tipo de Crédito</label>
-                    <div>
-                        <input type="radio" name="tipo_credito" value="pessoal" id="pessoal" checked>
-                        <label for="pessoal">Pessoal</label>
-                        <input type="radio" name="tipo_credito" value="imobiliario" id="imobiliario">
-                        <label for="imobiliario">Imobiliário</label>
-                    </div>
-                </div>
-                <button type="button" class="btn btn-primary" onclick="nextStep()">Próximo Passo</button>
-            </div>
+        <form action="{{ route('emprestimos.store') }}" method="POST">
+    @csrf
+    <div class="mb-4">
+        <label for="valor" class="block text-lg font-medium">Valor do Empréstimo</label>
+        <input type="number" name="valor" id="valor" class="border rounded px-4 py-2 w-full" placeholder="Ex.: 1000.00" required>
+    </div>
 
-            <div id="etapa-2" class="etapa hidden">
-                <div id="resumo" class="mb-4">
-                    <h3 class="text-xl font-semibold">Resumo do Empréstimo</h3>
-                    <div>
-                        <p>Total do Crédito: R$<span id="total-credito">0.00</span></p>
-                        <p>Parcelas: <span id="parcelas-info">0</span></p>
-                        <p>Valor da Parcela: R$<span id="valor-parcela">0.00</span></p>
-                        <p>Valor Bruto: R$<span id="valor-bruto">0.00</span></p>
-                        <p>IOF: R$<span id="iof">0.00</span></p>
-                        <p>Juros Total: R$<span id="juros-total">0.00</span></p>
-                        <p>Total a Pagar: R$<span id="total-pagar">0.00</span></p>
-                    </div>
-                </div>
-                <button type="button" class="btn btn-secondary" onclick="previousStep()">Voltar</button>
-                <button type="submit" class="btn btn-success">Salvar Empréstimo</button>
-            </div>
-        </form>
+    <div class="mb-4">
+        <label for="data_emprestimo" class="block text-lg font-medium">Data de Empréstimo</label>
+        <input type="date" name="data_emprestimo" id="data_emprestimo" class="border rounded px-4 py-2 w-full" required>
+    </div>
+
+    <div class="mb-4">
+        <label for="numero_parcelas" class="block text-lg font-medium">Número de Parcelas</label>
+        <input type="number" name="numero_parcelas" id="numero_parcelas" class="border rounded px-4 py-2 w-full" placeholder="Ex.: 12" required>
+    </div>
+
+    <div class="mb-4">
+        <label for="tipo_credito" class="block text-lg font-medium">Tipo de Crédito</label>
+        <select name="tipo_credito" id="tipo_credito" class="border rounded px-4 py-2 w-full" required>
+            <option value="pessoal">Pessoal</option>
+            <option value="imobiliario">Imobiliário</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-4">Próximo Passo</button>
+</form>
+
     </div>
 
     <script>
@@ -73,13 +61,8 @@
                 }
             }
 
-            let jurosPercentual, iofPercentual = 0.03;
-
-            if (tipoCredito === 'pessoal') {
-                jurosPercentual = 0.06;
-            } else {
-                jurosPercentual = 0.04;
-            }
+            let jurosPercentual = tipoCredito === 'pessoal' ? 0.06 : 0.04;
+            let iofPercentual = 0.03;
 
             const jurosTotal = valor * jurosPercentual;
             const iof = valor * iofPercentual;
@@ -104,6 +87,8 @@
             document.getElementById('etapa-1').classList.remove('hidden');
         }
     </script>
-@endsection
+    <link href="{{ asset('css/emprestimo/create.css') }}" rel="stylesheet">
 
-@vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script src="{{ asset('js/emprestimo/create.js') }}"></script>
+
+@endsection

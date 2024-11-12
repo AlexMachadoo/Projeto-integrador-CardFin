@@ -5,9 +5,10 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                'resources/css/app.css',
-                'resources/js/app.js',
-                'resources/js/bootstrap.js',
+                'resources/css/app.css',        
+                'resources/js/app.js',         
+                'resources/js/bootstrap.js',    
+                'resources/css/cartoes/cartoes.css', 
             ],
             refresh: true,
         }),
