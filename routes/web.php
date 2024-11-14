@@ -9,41 +9,34 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+require __DIR__ . '/auth.php';
+
 Route::middleware(['auth', 'verified'])->group(function () {
-    // Rotas para Cartão
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    // Rotas de Cartão
+    Route::get('/cartao/{cartaoId}/etapa3', [CartaoController::class, 'etapa3'])->name('cartao.etapa3');
+
     Route::resource('cartao', CartaoController::class);
-    Route::get('/cartao', [CartaoController::class, 'index'])->name('cartao.index');
-    Route::get('/cartao/{id}', [CartaoController::class, 'show'])->name('cartao.show');
-    Route::get('/cartao/{id}/edit', [CartaoController::class, 'edit'])->name('cartao.edit');
-    Route::get('/cartao/etapa3', [CartaoController::class, 'etapa3'])->name('cartao.etapa3');
-    Route::get('/cartao/etapa4', [CartaoController::class, 'etapa4'])->name('cartao.etapa4');
-     Route::get('/cartao/{cartaoId}/etapa3', [CartaoController::class, 'etapa3'])->name('cartao.etapa3');
+    Route::get('/cartao/{cartaoId}/etapa3', [CartaoController::class, 'etapa3'])->name('cartao.etapa3');
     Route::get('/cartao/{cartaoId}/etapa4', [CartaoController::class, 'etapa4'])->name('cartao.etapa4');
 
-    // Rotas para Empréstimos
+    // Rotas de Empréstimos
     Route::resource('emprestimos', EmprestimosController::class);
-    Route::get('/dashboard', [EmprestimosController::class, 'dashboard'])->name('dashboard');
     Route::get('emprestimos/calculos', [EmprestimosController::class, 'calculo'])->name('emprestimos.calculo');
     Route::get('emprestimos/status/{id}', [EmprestimosController::class, 'show'])->name('emprestimos.show');
-    Route::get('/emprestimo/calculo', [EmprestimosController::class, 'calculo'])->name('emprestimos.calculo');
-    Route::post('/emprestimos', [EmprestimosController::class, 'store'])->name('emprestimos.store');
     Route::get('/emprestimos/{id}/confirmar', [EmprestimosController::class, 'confirmar'])->name('emprestimos.confirmar');
     Route::get('/emprestimos/{id}/recusar', [EmprestimosController::class, 'recusar'])->name('emprestimos.recusar');
-
-    // Rota para Status da Solicitação
     Route::get('/statusdesolicitacao', [EmprestimosController::class, 'statusDesolicitacao'])->name('statusdesolicitacao');
-
-    Route::get('/statusSolicitacao', [EmprestimosController::class, 'statusDesolicitacao'])->name('statusSolicitacao');
 });
 
-Route::middleware('auth')->group(function () {
+// Rotas de Perfil do Usuário
+    Route::middleware('auth')->group(function () {
+    Route::get('/cartao/{cartaoId}', [CartaoController::class, 'show'])->name('cartao.show');
+    Route::get('/user-profile', [ProfileController::class, 'show'])->name('user-profile');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
-
-require __DIR__ . '/auth.php';

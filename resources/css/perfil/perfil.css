@@ -1,0 +1,43 @@
+.perfil-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.perfil-section {
+    margin-bottom: 20px;
+}
+
+.perfil-section h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2D3748;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.perfil-section p {
+    color: #4A5568;
+    font-size: 1rem;
+}
+
+.text-green-500:hover {
+    color: #38A169;
+}
+
+.bg-white {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dark .bg-gray-800 {
+    background-color: #2D3748;
+}
+
+.text-blue-500:hover {
+    color: #3182CE;
+}
+
+.text-red-500:hover {
+    color: #E53E3E;
+}
